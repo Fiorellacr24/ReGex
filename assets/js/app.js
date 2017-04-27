@@ -1,11 +1,20 @@
-function validarform(){
-	var nombre, apellido, cumpleaños, celular, fijo, contraseña, comentarios, terminos; 
-		nombre = document.getElementById('name').value;
-		apellido = document.getElementById('lastname').value;
-		cumpleaños = document.getElementById('birthday').value;
-		celular = document.getElementById('celphone').value;
-		fijo = document.getElementById('fixed-number').value;
-		contraseña = document.getElementById('password').value;
-		comentarios = document.getElementById('comments').value;
-		terminos = document.getElementById('terms').value;
-}
+var nombre, apellido, cumpleaños, celular, fijo, contraseña, comentarios, terminos; 
+		name = document.getElementById('name').value;
+		lastname = document.getElementById('lastname').value;
+		birthday = document.getElementById('birthday').value;
+		celphone = document.getElementById('celphone').value;
+		number = document.getElementById('number').value;
+		password = document.getElementById('password').value;
+		confirmPassword = document.getElementById('confirm-password').value;
+		comments = document.getElementById('comments').value;
+		terms = document.getElementById('terms').value;
+
+function vpassword(){
+	if(password.value != confirmPassword.value){
+		confirmPassword.setCustomValidity('Las contraseñas no coinciden');
+	} else{
+		confirmPassword.setCustomValidity('');
+	}
+
+password.onchange = vpassword;
+password.onkeyup = vpassword;
