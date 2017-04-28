@@ -13,7 +13,7 @@
 			</div>
 			<div class="lastname-container">
 				<label for="lastname">Apellido</label>
-				<input type="text" id="lastname" pattern="[^a-zá-ú-0-9@.,:/=\s]+([a-zá-ú ]{2,})" required autofocus>
+				<input type="text" id="lastname" pattern="[^a-zá-ú-0-9@.,:/=\s]+([a-zá-ú ]{2,})" required>
 			</div>
 			<div class="dni-container">
 				<label for="dni">DNI</label>
@@ -25,19 +25,19 @@
 			</div>
 			<div class="celphone-container">
 				<label for="celphone">Celular</label>
-				<input type="number" id="celphone" pattern="^([9]\d{8})" maxlength="9" required>
+				<input type="number" id="celphone" pattern="^([0-9])" maxlength="9" required>
 			</div>
 			<div class="number-container">
 				<label for="number">Fijo</label>
-				<input type="number" id="number" pattern="^([0-9]{6,7})" maxlength="7" required>
+				<input type="number" id="number" pattern="^([0-9])" maxlength="7" required>
 			</div>
 			<div class="password-container">
 				<label for="password">Contraseña</label>
-				<input type="password" id="password" pattern=".{,25}" required>
+				<input type="password" id="password" pattern=".{6,25}" placeholder="Mayor de 6 caracteres" required>
 			</div>
 			<div class="confirm-password-container">
 				<label for="confirm-password">Repetir contraseña</label>
-				<input type="password" id="confirm-password" pattern=".{,25}" required>
+				<input type="password" id="confirm-password" pattern=".{6,25}" required>
 			</div>
 			<div>
 				<label for="comments-container">Comentarios</label>
@@ -51,8 +51,8 @@
 			</div>
 		</form>
 	</section>
-	<!--
+	
 	<script type='text/javascript' src='assets/js/app.js'></script>
-	-->
+	
 </body>
 </html>
