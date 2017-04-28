@@ -6,47 +6,53 @@
 </head>
 <body>
 	<section>
-		<form action="">
+		<form action="" class="form">
 			<div class="name-container">
 				<label for="name">Nombre</label>
-				<input type="text" id="name" required>
+				<input type="text" id="name" pattern="[^a-zá-ú-0-9@.,:/=\s]+([a-zá-ú ]{2,})" required autofocus>
 			</div>
 			<div class="lastname-container">
 				<label for="lastname">Apellido</label>
-				<input type="text" id="lastname" required>
+				<input type="text" id="lastname" pattern="[^a-zá-ú-0-9@.,:/=\s]+([a-zá-ú ]{2,})" required autofocus>
 			</div>
-			<div class="birthday">
+			<div class="dni-container">
+				<label for="dni">DNI</label>
+				<input type="number" id="dni" pattern="[0-9]{8}" maxlength="8" required>
+			</div>
+			<div class="birthday-container">
 				<label for="birthday">Fecha de Nacimiento</label>
-				<input type="date" id="birthday" required>
+				<input type="text" id="birthday" pattern="(0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])[- /.](19|20)\d\d" placeholder="DD/MM/AAAA" required>
 			</div>
-			<div class="celphone">
+			<div class="celphone-container">
 				<label for="celphone">Celular</label>
-				<input type="number" id="celphone" required>
+				<input type="number" id="celphone" pattern="^([9]\d{8})" maxlength="9" required>
 			</div>
-			<div class="number">
+			<div class="number-container">
 				<label for="number">Fijo</label>
-				<input type="number" id="number" required>
+				<input type="number" id="number" pattern="^([0-9]{6,7})" maxlength="7" required>
 			</div>
-			<div class="password">
-				<label for="confirm-password">Contraseña</label>
-				<input type="password" id="confirm-password" required>
+			<div class="password-container">
+				<label for="password">Contraseña</label>
+				<input type="password" id="password" pattern=".{,25}" required>
 			</div>
-			<div class="confirm-password">
+			<div class="confirm-password-container">
 				<label for="confirm-password">Repetir contraseña</label>
-				<input type="password" id="confirm-password" required>
+				<input type="password" id="confirm-password" pattern=".{,25}" required>
 			</div>
 			<div>
-				<label for="comments">Comentarios</label>
+				<label for="comments-container">Comentarios</label>
 				<textarea id="comments" rows="4" cols="50" required></textarea>
 			</div>
 			<div>
 				<label for="terms"><input id="terms" type="checkbox" required>Acepto los términos y condiciones</label>
 			</div>
 			<div>
-				<button type="submit">Confirm</button>
+				<input type="submit" id="validar" value="Enviar">
 			</div>
 		</form>
 	</section>
+	<!--
 	<script type='text/javascript' src='assets/js/app.js'></script>
+	-->
 </body>
 </html>

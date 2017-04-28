@@ -1,20 +1,29 @@
-var nombre, apellido, cumpleaños, celular, fijo, contraseña, comentarios, terminos; 
-		name = document.getElementById('name').value;
-		lastname = document.getElementById('lastname').value;
-		birthday = document.getElementById('birthday').value;
-		celphone = document.getElementById('celphone').value;
-		number = document.getElementById('number').value;
-		password = document.getElementById('password').value;
-		confirmPassword = document.getElementById('confirm-password').value;
-		comments = document.getElementById('comments').value;
-		terms = document.getElementById('terms').value;
+window.addEventListener('load',function(event){
+	event.preventDefault();
 
-function vpassword(){
-	if(password.value != confirmPassword.value){
-		confirmPassword.setCustomValidity('Las contraseñas no coinciden');
-	} else{
-		confirmPassword.setCustomValidity('');
-	}
+	var validar = document.getElementById('validar');
 
-password.onchange = vpassword;
-password.onkeyup = vpassword;
+		validar.addEventListener('click',function(){
+			
+			var	dni = document.getElementById('dni').value;
+			var	celphone = document.getElementById('celphone').value;
+			var	number = document.getElementById('number').value;
+			var	password = document.getElementById('password').value;
+			var	confirmPassword = document.getElementById('confirm-password').value;
+			var	terms = document.getElementById('terms').value;
+
+			if(dni == null || dni.length == 0 || ( !(/^\d{8}$/.test(dni)))){
+				alert("Ingrese correctamente su DNI")
+			}else if(celphone == null || celphone.length == 0 || ( !(/^\d{9}$/.test(celphone))) ){
+				alert("Ingrese correctamente su # de Celular")
+			}else if(number == null || number.length == 0 || ( !(/^\d{7}$/.test(number))) ){
+				alert("Ingrese su # Fijo")
+			}else if(password == null || password=="" ||  !(/.{6,25}/.test(password))){
+				alert("Ingrese su contraseña")
+			}else if(password != confirmPassword){
+				alert("Las contraseñas no coinciden")
+			}else if(!terms.checked){
+				alert("Acepte los términos y condiciones")
+			}
+		});
+});
